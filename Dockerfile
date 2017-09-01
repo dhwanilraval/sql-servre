@@ -12,7 +12,7 @@ FROM registry.access.redhat.com/rhel7/rhel:latest
 #RUN subscription-manager register --username GHSHostingandCloudENG --password password11 --auto-attach
 RUN yum install -y curl
 RUN curl https://packages.microsoft.com/config/rhel/7/mssql-server.repo > /etc/yum.repos.d/mssql-server.repo
-RUN yum install -y mssql-server mssql-tools unixODBC-devel mssql-server-agent mssql-server-ha mssql-server-fts
+RUN yum install -y mssql-server mssql-tools unixODBC-devel mssql-server-agent
 
 # Default SQL Server TCP/Port
 EXPOSE 1433
