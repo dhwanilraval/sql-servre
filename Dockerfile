@@ -11,8 +11,11 @@ FROM registry.access.redhat.com/rhel7/rhel:latest
 # If you build on other machines, please fill in Red Hat subscription name and password and uncomment the below command.
 #RUN subscription-manager register --username GHSHostingandCloudENG --password password11 --auto-attach
 RUN yum install -y curl
-RUN curl https://packages.microsoft.com/config/rhel/7/mssql-server.repo > /etc/yum.repos.d/mssql-server.repo
+RUN curl https://packages.microsoft.com/config/rhel/7/mssql-server.repo > /etc/yum.repos.d/mssql-server.repo && \
+    curl https://packages.microsoft.com/config/rhel/7/prod.repo > /etc/yum.repos.d/msprod.repo
 RUN yum install -y mssql-server mssql-tools unixODBC-devel mssql-server-agent
+
+ENV PATH=${PATH}:/opt/mssql/bin:/opt/mssql-tools/bin
 
 # Default SQL Server TCP/Port
 EXPOSE 1433
