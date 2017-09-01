@@ -3,8 +3,8 @@
 # GitRepo: https://github.com/twright-msft/mssql-server-rhel
 
 # Base OS layer: latest RHEL 7
-#FROM registry.access.redhat.com/rhel7/rhel:latest
-FROM rhel7
+FROM registry.access.redhat.com/rhel7/rhel:latest
+#FROM rhel7
 
 # Install latest mssql-server package
 # You don't have to register subscription if you build docker image on registered RHEL machine.
